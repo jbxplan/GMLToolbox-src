@@ -4029,7 +4029,7 @@ bool _Ring::advancedCheck ( Feature * pObj, string featureProperty, CheckingPara
     e = new Plane ( GeoPoint ( x, y, 0.0), d );
   }
 
-  size_t cutAnz = checkSelfOverlap( vX, vY, 0.5*pCheckParams->minimalPointDistance, pCheckParams->minimalAngleDistance, vCutResults );
+  int cutAnz = checkSelfOverlap( vX, vY, 0.5*pCheckParams->minimalPointDistance, pCheckParams->minimalAngleDistance, vCutResults );
   if ( cutAnz > 0 && ( planarityCheck == PLANARITY_CHECK_FULFILLED || checkAnyway )   )
   {
 		size_t pointOnPointAnz = 0;
