@@ -14969,12 +14969,12 @@ bool Solid::advancedCheck ( Feature * pObj, string featureProperty, CheckingPara
     return false;
 
   bool success = pAussenkontur->advancedCheck( pObj, featureProperty, pCheckParams, vErrorReport, checkAnyway );
-	bool successA = pAussenkontur->topologyCheck(pObj, featureProperty, pCheckParams, vErrorReport, checkAnyway );
+//	bool successA = pAussenkontur->topologyCheck(pObj, featureProperty, pCheckParams, vErrorReport, checkAnyway );
 
-  if ( success && successA )
+  if ( success  )
     checkResult = ADVANCED_CHECK_FULFILLED;
   else
-    checkResult = ADVANCED_CHECK_FULFILLED;
+    checkResult = ADVANCED_CHECK_FAILED;
 
   return success;
 }

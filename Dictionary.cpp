@@ -231,7 +231,7 @@ bool GmlDictionaryEntry::getSchluesselText ( std::string schluesselNummerP, std:
   iter = mDictionaryEntryDefinitions.find ( schluesselNummerP );
   if ( iter != mDictionaryEntryDefinitions.end() )
   {
-    schluesselTextP = iter->second.name;
+    schluesselTextP = iter->second.beschreibung;
 		if ( schluesselTextP == "" )
       schluesselTextP = schluesselNummerP;
     return true;
@@ -647,6 +647,13 @@ bool GmlDictionaryReader::readGmlDictionaryCollection ( std::string fileName, Gm
          STR = reader->ReadString();
          QuConvert::systemStr2stdStr ( stdString, STR );
          pEntry->setName ( stdString );
+       }
+       else
+       if (pActElement->CompareTo( "identifier" ) == 0 )
+       {
+         STR = reader->ReadString();
+         QuConvert::systemStr2stdStr ( stdString, STR );
+         pEntry->setIdentifier ( stdString );
        }
 
      }
